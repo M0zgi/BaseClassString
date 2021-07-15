@@ -165,12 +165,20 @@ inline MyString &MyString::operator+=(const MyString& obj)
 
 inline bool MyString::operator==(const MyString& obj)
 {
+	if (this->length != obj.length)
+		return false;	
+	
 	return !strcmp(this->str, obj.str);
 }
 
 inline bool MyString::operator!=(const MyString& obj)
 {
-	return strcmp(this->str, obj.str);
+	//if (this->length != obj.length)
+		//return true;
+	
+	//return strcmp(this->str, obj.str);
+
+	return !(this->operator==(obj));
 }
 
 ostream& operator<<(ostream& out, const MyString& obj)
