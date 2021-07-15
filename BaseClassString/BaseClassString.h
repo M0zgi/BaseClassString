@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 
 #include<iostream>
@@ -9,50 +9,50 @@ using namespace std;
 struct numpunct
 	: std::numpunct<char>
 {
-	std::string do_truename() const { return "Да"; }
-	std::string do_falsename() const { return "Нет"; }
+	std::string do_truename() const { return "Р”Р°"; }
+	std::string do_falsename() const { return "РќРµС‚"; }
 };
 
 class MyString
 {
 public:
 	
-	// 1). конструктор без параметров;
+	// 1). РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ;
 	MyString() {str = nullptr; }
 
-	// 2). конструктор, принимающий в качестве параметра C-строку (заканчивается нулевым байтом);
+	// 2). РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ, РїСЂРёРЅРёРјР°СЋС‰РёР№ РІ РєР°С‡РµСЃС‚РІРµ РїР°СЂР°РјРµС‚СЂР° C-СЃС‚СЂРѕРєСѓ (Р·Р°РєР°РЅС‡РёРІР°РµС‚СЃСЏ РЅСѓР»РµРІС‹Рј Р±Р°Р№С‚РѕРј);
 	MyString(const char* str);
 
-	// 3) конструктор копирования;
+	// 3) РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ;
 	MyString(const MyString& obj);
 
-	// 4) оператор присваивания;
+	// 4) РѕРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ;
 	MyString& operator =(const MyString& obj);
 
-	// 5). получение длины строки;
+	// 5). РїРѕР»СѓС‡РµРЅРёРµ РґР»РёРЅС‹ СЃС‚СЂРѕРєРё;
 	int countLenght();
 
-	// 6) очистка строки (сделать строку пустой);
+	// 6) РѕС‡РёСЃС‚РєР° СЃС‚СЂРѕРєРё (СЃРґРµР»Р°С‚СЊ СЃС‚СЂРѕРєСѓ РїСѓСЃС‚РѕР№);
 	void clearString();
 
 	//void print() { cout << str; }
 
 	
-	// 7). деструктор
+	// 7). РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 	~MyString();
 
-	//8) конкатенация строк(перегрузить операторы + и += );
+	//8) РєРѕРЅРєР°С‚РµРЅР°С†РёСЏ СЃС‚СЂРѕРє(РїРµСЂРµРіСЂСѓР·РёС‚СЊ РѕРїРµСЂР°С‚РѕСЂС‹ + Рё += );
 	MyString operator+(const MyString& obj);
 
 	MyString &operator+=(const MyString& obj);
 
-	//9) проверка на равенство(==) и на неравенство (!=).
+	//9) РїСЂРѕРІРµСЂРєР° РЅР° СЂР°РІРµРЅСЃС‚РІРѕ(==) Рё РЅР° РЅРµСЂР°РІРµРЅСЃС‚РІРѕ (!=).
 
 	bool operator==(const MyString& obj);
 
 	bool operator!=(const MyString& obj);
 
-	//перегузка оператора вывода
+	//РїРµСЂРµРіСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РІС‹РІРѕРґР°
 	friend ostream& operator << (ostream& out, const MyString& obj);
 
 private:
@@ -106,7 +106,7 @@ inline void MyString::clearString()
 
 MyString::~MyString()
 {
-	//очищаем динамическую память выделенную под массив char *str
+	//РѕС‡РёС‰Р°РµРј РґРёРЅР°РјРёС‡РµСЃРєСѓСЋ РїР°РјСЏС‚СЊ РІС‹РґРµР»РµРЅРЅСѓСЋ РїРѕРґ РјР°СЃСЃРёРІ char *str
 	delete []this->str;
 }
 

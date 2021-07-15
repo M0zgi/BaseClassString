@@ -1,4 +1,4 @@
-#include"BaseClassString.h"
+п»ї#include"BaseClassString.h"
 
 int main()
 {
@@ -11,81 +11,81 @@ int main()
 	cout.imbue(loc);
 
 
-	MyString str("Я строка str");
+	MyString str("РЇ СЃС‚СЂРѕРєР° str");
 
 	//str.print();
 
-	cout << "Cтрока str: " << str;
+	cout << "CС‚СЂРѕРєР° str: " << str;
 
 	int lenght = str.countLenght();
 
-	cout << "Длина строки str: " << lenght << " символа(ов)." << endl;
+	cout << "Р”Р»РёРЅР° СЃС‚СЂРѕРєРё str: " << lenght << " СЃРёРјРІРѕР»Р°(РѕРІ)." << endl;
 
 	cout << "------------------------------------------------" << endl;
 
-	MyString str2("Я строка str2");
+	MyString str2("РЇ СЃС‚СЂРѕРєР° str2");
 
-	cout << "Cтрока str2: " << str2;
+	cout << "CС‚СЂРѕРєР° str2: " << str2;
 
 	lenght = str2.countLenght();
 
-	cout << "Длина строки str2: " << lenght << " символа(ов)." << endl;
+	cout << "Р”Р»РёРЅР° СЃС‚СЂРѕРєРё str2: " << lenght << " СЃРёРјРІРѕР»Р°(РѕРІ)." << endl;
 
 	cout << "------------------------------------------------" << endl;
 
 	MyString str3;
 
-	cout << "Cтрока str3 = str2 = str: "; str3 = str2 = str;
+	cout << "CС‚СЂРѕРєР° str3 = str2 = str: "; str3 = str2 = str;
 	cout << str3 << endl;
 	lenght = str3.countLenght();
-	cout << "Длина строки str3: " << lenght << " символа(ов)." << endl;
-	cout << "Cтрока str: " << str;
-	cout << "Cтрока str2: " << str2;	
+	cout << "Р”Р»РёРЅР° СЃС‚СЂРѕРєРё str3: " << lenght << " СЃРёРјРІРѕР»Р°(РѕРІ)." << endl;
+	cout << "CС‚СЂРѕРєР° str: " << str;
+	cout << "CС‚СЂРѕРєР° str2: " << str2;	
 
 	cout << "------------------------------------------------" << endl;
 
 	str3.clearString();
-	cout << "Cтрока str3.clearString() -> str3(\"Я новая срока str3\")" << endl;
-	str3 = "Я новая срока str3";
-	cout << "Cтрока str3: " << str3;
+	cout << "CС‚СЂРѕРєР° str3.clearString() -> str3(\"РЇ РЅРѕРІР°СЏ СЃСЂРѕРєР° str3\")" << endl;
+	str3 = "РЇ РЅРѕРІР°СЏ СЃСЂРѕРєР° str3";
+	cout << "CС‚СЂРѕРєР° str3: " << str3;
 	lenght = str3.countLenght();
-	cout << "Длина строки str3: " << lenght << " символа(ов)." << endl;
+	cout << "Р”Р»РёРЅР° СЃС‚СЂРѕРєРё str3: " << lenght << " СЃРёРјРІРѕР»Р°(РѕРІ)." << endl;
 
 	cout << "------------------------------------------------" << endl;
 
-	MyString str4 = "Я новая срока str4 = str3 + str = ";
-	cout << "Cтрока str4: " << str4;
+	MyString str4 = "РЇ РЅРѕРІР°СЏ СЃСЂРѕРєР° str4 = str3 + str = ";
+	cout << "CС‚СЂРѕРєР° str4: " << str4;
 
 	str4 = str3 + " + " + str;
-	cout << "Cтрока str4: " << str4 << endl;
+	cout << "CС‚СЂРѕРєР° str4: " << str4 << endl;
 
 	cout << "------------------------------------------------" << endl;
 
-	MyString str5 = "Я новая срока str5 += str = ";
-	cout << "Cтрока str5: " << str5;
+	MyString str5 = "РЇ РЅРѕРІР°СЏ СЃСЂРѕРєР° str5 += str = ";
+	cout << "CС‚СЂРѕРєР° str5: " << str5;
 
 	str5 += str;
-	cout << "Cтрока str5: " << str5 << endl;
+	cout << "CС‚СЂРѕРєР° str5: " << str5 << endl;
 
 	cout << "------------------------------------------------" << endl;
 
 	bool check = str == str2;
 
-	cout << "Cтрока str1 == str2 ? " << check << endl;
+	cout << "CС‚СЂРѕРєР° str1 == str2 ? " << check << endl;
 
 	check = str == str3;
 
-	cout << "Cтрока str1 == str3 ? " << check << endl;
+	cout << "CС‚СЂРѕРєР° str1 == str3 ? " << check << endl;
 
 	cout << "------------------------------------------------" << endl;
 
 	check = str != str2;
 
-	cout << "Cтрока str1 != str2 " << check << endl;
+	cout << "CС‚СЂРѕРєР° str1 != str2 " << check << endl;
 
 	check = str != str3;
 
-	cout << "Cтрока str1 != str3 " << check << endl;
+	cout << "CС‚СЂРѕРєР° str1 != str3 " << check << endl;
 
 	cout << endl;
 	system("pause");
