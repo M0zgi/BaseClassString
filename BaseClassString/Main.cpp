@@ -67,6 +67,9 @@ int main()
 	str5 += str;
 	cout << "Cтрока str5: " << str5 << endl;
 
+	lenght = str5.countLenght();
+	cout << "Длина строки str3: " << lenght << " символа(ов)." << endl;
+
 	cout << "------------------------------------------------" << endl;
 
 	bool check = str == str2;

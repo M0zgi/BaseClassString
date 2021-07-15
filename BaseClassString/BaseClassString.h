@@ -15,10 +15,15 @@ struct numpunct
 
 class MyString
 {
+
+private:
+	char* str;
+	int length;
+
 public:
 	
 	// 1). конструктор без параметров;
-	MyString() {str = nullptr; }
+	MyString() {str = nullptr, length = 0; }
 
 	// 2). конструктор, принимающий в качестве параметра C-строку (заканчивается нулевым байтом);
 	MyString(const char* str);
@@ -54,23 +59,19 @@ public:
 
 	//перегузка оператора вывода
 	friend ostream& operator << (ostream& out, const MyString& obj);
-
-private:
-	char* str;
-
 };
 
 inline MyString::MyString(const char* str)
 {
-	int lenght = strlen(str);
-	this->str = new char [lenght + 1];
+	this->length = strlen(str);
+	this->str = new char [length + 1];
 	strcpy(this->str, str);
 }
 
 inline MyString::MyString(const MyString& obj)
 {
-	int lenght = strlen(obj.str);
-	this->str = new char[lenght + 1];
+	this->length = strlen(obj.str);
+	this->str = new char[length + 1];
 	strcpy(this->str, obj.str);
 }
 
@@ -82,8 +83,8 @@ inline MyString& MyString::operator=(const MyString& obj)
 		delete[]this->str;
 	}
 	
-	int lenght = strlen(obj.str);    
-	this->str = new char[lenght + 1];
+	this->length = strlen(obj.str);
+	this->str = new char[length + 1];
 	strcpy(this->str, obj.str);
 
 	return *this;
@@ -91,7 +92,8 @@ inline MyString& MyString::operator=(const MyString& obj)
 
 inline int MyString::countLenght()
 {
-	return strlen(this->str);
+	//return strlen(this->str);
+	return length;
 }
 
 inline void MyString::clearString()
@@ -102,6 +104,7 @@ inline void MyString::clearString()
 	}
 
 	this->str = nullptr;
+	this->length = 0;
 }
 
 MyString::~MyString()
@@ -114,7 +117,9 @@ inline MyString MyString::operator+(const MyString& obj)
 {
 	MyString tmp;
 
-	tmp.str = new char[strlen(this->str) + strlen(obj.str) + 1];
+	length = strlen(this->str) + strlen(obj.str);
+
+	tmp.str = new char[length + 1];
 
 	//int i = 0;
 
@@ -141,13 +146,17 @@ inline MyString &MyString::operator+=(const MyString& obj)
 {
 	MyString tmp;
 
-	tmp.str = new char[strlen(this->str) + strlen(obj.str) + 1];
+	length = strlen(this->str) + strlen(obj.str);
+
+	tmp.str = new char[length + 1];
 	tmp.str = strcpy(tmp.str, this->str);
 	tmp.str = strcat(tmp.str, obj.str);
 
 	this->clearString();
 	
-	this->str = new char[strlen(tmp.str) + 1];
+	length = strlen(tmp.str);
+
+	this->str = new char[length + 1];
 
 	strcpy(this->str, tmp.str);
 
